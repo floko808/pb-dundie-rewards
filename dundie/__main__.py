@@ -1,4 +1,5 @@
-print("Executing initializing dundie... Entrypoint")
-def main():
-    print("Entrypoint")
-    
+import argparse
+from dundie.cli import main
+
+if __name__ == "__main__":
+    main()
