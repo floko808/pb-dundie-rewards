@@ -5,6 +5,7 @@
 from setuptools import setup, find_packages
 import os
 
+
 def read(*paths):
     """Read the contexts of a text file safely"""
     rootpath = os.path.dirname(__file__)
@@ -12,15 +13,13 @@ def read(*paths):
     with open(filepath) as file_:
         return file_.read().strip()
 
+
 def read_requirements(path):
     """return a list of requitrements from a text file"""
-
     return [
         line.strip() for line in read(path).split("\n")
         if not line.startswith(("#", "git+", '"', "-"))
     ]
-    
-
 
 
 setup(

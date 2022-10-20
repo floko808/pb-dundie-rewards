@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="6" time="0.110" timestamp="2022-10-20T17:22:38.670392" hostname="moonstar"><testcase classname="tests.test_load" name="test_load_positive_has_3_people" time="0.000" /><testcase classname="tests.test_load" name="test_load_positive_first_name_starts_with_j" time="0.000" /><testcase classname="integration.test_load" name="test_load" time="0.003" /><testcase classname="integration.test_load" name="test_load_negative_call_load_command_with_wrong_params[loady]" time="0.002"><failure message="assert 'No such command loady' in &quot;Usage: main [OPTIONS] COMMAND [ARGS]...\nTry 'main --help' for help.\n╭─ Error ──────────────────────────────────────────────────────────────────────╮\n│ No such command 'loady'.                                                     │\n╰──────────────────────────────────────────────────────────────────────────────╯\n&quot;&#10; +  where &quot;Usage: main [OPTIONS] COMMAND [ARGS]...\nTry 'main --help' for help.\n╭─ Error ──────────────────────────────────────────────────────────────────────╮\n│ No such command 'loady'.                                                     │\n╰──────────────────────────────────────────────────────────────────────────────╯\n&quot; = &lt;Result SystemExit(2)&gt;.output">wrong_command = 'loady'
+
+    @pytest.mark.integration
+    @pytest.mark.medium
+    @pytest.mark.parametrize("wrong_command", ["loady", "carrega", "start"])
+    def test_load_negative_call_load_command_with_wrong_params(wrong_command):
+        """test command load"""
+        out = cmd.invoke(main, wrong_command, PF)
+        assert out.exit_code != 0
+&gt;       assert f'No such command {wrong_command}' in out.output
+E       assert 'No such command loady' in "Usage: main [OPTIONS] COMMAND [ARGS]...\nTry 'main --help' for help.\n╭─ Error ──────────────────────────────────────────────────────────────────────╮\n│ No such command 'loady'.                                                     │\n╰──────────────────────────────────────────────────────────────────────────────╯\n"
+E        +  where "Usage: main [OPTIONS] COMMAND [ARGS]...\nTry 'main --help' for help.\n╭─ Error ──────────────────────────────────────────────────────────────────────╮\n│ No such command 'loady'.                                                     │\n╰──────────────────────────────────────────────────────────────────────────────╯\n" = &lt;Result SystemExit(2)&gt;.output
+
+integration/test_load.py:25: AssertionError</failure></testcase><testcase classname="integration.test_load" name="test_load_negative_call_load_command_with_wrong_params[carrega]" time="0.002"><failure message="assert 'No such command carrega' in &quot;Usage: main [OPTIONS] COMMAND [ARGS]...\nTry 'main --help' for help.\n╭─ Error ──────────────────────────────────────────────────────────────────────╮\n│ No such command 'carrega'.                                                   │\n╰──────────────────────────────────────────────────────────────────────────────╯\n&quot;&#10; +  where &quot;Usage: main [OPTIONS] COMMAND [ARGS]...\nTry 'main --help' for help.\n╭─ Error ──────────────────────────────────────────────────────────────────────╮\n│ No such command 'carrega'.                                                   │\n╰──────────────────────────────────────────────────────────────────────────────╯\n&quot; = &lt;Result SystemExit(2)&gt;.output">wrong_command = 'carrega'
+
+    @pytest.mark.integration
+    @pytest.mark.medium
+    @pytest.mark.parametrize("wrong_command", ["loady", "carrega", "start"])
+    def test_load_negative_call_load_command_with_wrong_params(wrong_command):
+        """test command load"""
+        out = cmd.invoke(main, wrong_command, PF)
+        assert out.exit_code != 0
+&gt;       assert f'No such command {wrong_command}' in out.output
+E       assert 'No such command carrega' in "Usage: main [OPTIONS] COMMAND [ARGS]...\nTry 'main --help' for help.\n╭─ Error ──────────────────────────────────────────────────────────────────────╮\n│ No such command 'carrega'.                                                   │\n╰──────────────────────────────────────────────────────────────────────────────╯\n"
+E        +  where "Usage: main [OPTIONS] COMMAND [ARGS]...\nTry 'main --help' for help.\n╭─ Error ──────────────────────────────────────────────────────────────────────╮\n│ No such command 'carrega'.                                                   │\n╰──────────────────────────────────────────────────────────────────────────────╯\n" = &lt;Result SystemExit(2)&gt;.output
+
+integration/test_load.py:25: AssertionError</failure></testcase><testcase classname="integration.test_load" name="test_load_negative_call_load_command_with_wrong_params[start]" time="0.002"><failure message="assert 'No such command start' in &quot;Usage: main [OPTIONS] COMMAND [ARGS]...\nTry 'main --help' for help.\n╭─ Error ──────────────────────────────────────────────────────────────────────╮\n│ No such command 'start'.                                                     │\n╰──────────────────────────────────────────────────────────────────────────────╯\n&quot;&#10; +  where &quot;Usage: main [OPTIONS] COMMAND [ARGS]...\nTry 'main --help' for help.\n╭─ Error ──────────────────────────────────────────────────────────────────────╮\n│ No such command 'start'.                                                     │\n╰──────────────────────────────────────────────────────────────────────────────╯\n&quot; = &lt;Result SystemExit(2)&gt;.output">wrong_command = 'start'
+
+    @pytest.mark.integration
+    @pytest.mark.medium
+    @pytest.mark.parametrize("wrong_command", ["loady", "carrega", "start"])
+    def test_load_negative_call_load_command_with_wrong_params(wrong_command):
+        """test command load"""
+        out = cmd.invoke(main, wrong_command, PF)
+        assert out.exit_code != 0
+&gt;       assert f'No such command {wrong_command}' in out.output
+E       assert 'No such command start' in "Usage: main [OPTIONS] COMMAND [ARGS]...\nTry 'main --help' for help.\n╭─ Error ──────────────────────────────────────────────────────────────────────╮\n│ No such command 'start'.                                                     │\n╰──────────────────────────────────────────────────────────────────────────────╯\n"
+E        +  where "Usage: main [OPTIONS] COMMAND [ARGS]...\nTry 'main --help' for help.\n╭─ Error ──────────────────────────────────────────────────────────────────────╮\n│ No such command 'start'.                                                     │\n╰──────────────────────────────────────────────────────────────────────────────╯\n" = &lt;Result SystemExit(2)&gt;.output
+
+integration/test_load.py:25: AssertionError</failure></testcase></testsuite></testsuites>

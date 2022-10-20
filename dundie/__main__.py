@@ -1,5 +1,4 @@
-import argparse
-from dundie.cli import main
+from dundie.cli import main  # noqa
 
 if __name__ == "__main__":
     main()
