@@ -1,5 +1,6 @@
 import argparse
-from dundie.core import load
+
+from dundie.core import load  # noqa
 
 
 def main():
@@ -21,6 +22,5 @@ def main():
         default=None,
     )
     args = parser.parse_args()
-    
+
     print(*globals()[args.subcommand](args.filepath), end="")
-  
