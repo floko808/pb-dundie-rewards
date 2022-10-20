@@ -1,5 +1,3 @@
-from subprocess import CalledProcessError, check_output
-
 import pytest
 from click.testing import CliRunner
 
