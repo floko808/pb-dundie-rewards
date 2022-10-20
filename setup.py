@@ -18,7 +18,8 @@ def read_requirements(path):
     """return a list of requitrements from a text file"""
     return [
         line.strip() for line in read(path).split("\n")
-        if not line.startswith(("#", "git+", '"', "-"))]
+        if not line.startswith(("#", "git+", '"', "-"))
+    ]
 
 
 setup(
