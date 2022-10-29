@@ -35,15 +35,13 @@ def load(filepath):
     ie: path/to_the_file/file.csv
     """
     table = Table(title="Dunder Mifflin Associates")
-    headers = ["name", "dept", "role", "e-mail"]
+    headers = ["name", "dept", "role", "created", "e-mail"]
     for header in headers:
         table.add_column(header, style="green")
 
     result = core.load(filepath)
     for person in result:
         # table.add_row(*person.split(","), style="blue")
-        table.add_row(
-            *[field.strip() for field in person.split(",")], style="red"
-        )
+        table.add_row(*[str(value) for value in person.values()], style="red")
     console = Console()
     console.print(table)
