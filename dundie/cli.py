@@ -1,3 +1,5 @@
+import json
+
 import pkg_resources
 import rich_click as click
 from rich.console import Console
@@ -35,13 +37,57 @@ def load(filepath):
     ie: path/to_the_file/file.csv
     """
     table = Table(title="Dunder Mifflin Associates")
-    headers = ["name", "dept", "role", "created", "e-mail"]
+    headers = ["Name", "Dept", "Role", "Created", "E-mail"]
     for header in headers:
         table.add_column(header, style="green")
 
     result = core.load(filepath)
     for person in result:
-        # table.add_row(*person.split(","), style="blue")
         table.add_row(*[str(value) for value in person.values()], style="red")
     console = Console()
     console.print(table)
+
+
+@main.command()
+@click.option("--dept", required=False)
+@click.option("--email", required=False)
+@click.option("--output", default=None)
+def show(output, **query):
+    """Shows data stored in the database"""
+    result = core.read(**query)
+    if output:
+        with open(output, "w") as output_file:
+            output_file.write(json.dumps(result))
+    if not result:
+        print(f"nothing to show: {result}")
+
+    table = Table(title="Dunder Mifflin Report")
+    for key in result[0]:
+        table.add_column(key.title(), style="magenta")
+
+    for person in result:
+        table.add_row(*[str(value) for value in person.values()])
+    console = Console()
+    console.print(table)
+
+
+@main.command()
+@click.argument("value", type=int, required=True)
+@click.option("--dept", required=False)
+@click.option("--email", required=False)
+@click.pass_context
+def add(ctx, value, **query):
+    """Add points to the user or department"""
+    core.add(value, **query)
+    ctx.invoke(show, **query)
+
+
+@main.command()
+@click.argument("value", type=int, required=True)
+@click.option("--dept", required=False)
+@click.option("--email", required=False)
+@click.pass_context
+def remove(ctx, value, **query):
+    """Add points to the user or department"""
+    core.remove(-value, **query)
+    ctx.invoke(show, **query)

@@ -23,8 +23,8 @@
         }
     },
     "balance": {
-        "jim@dundermifflin.com": 500,
-        "schurute@dundermifflin.com": 100,
+        "jim@dundermifflin.com": 495,
+        "schurute@dundermifflin.com": 95,
         "glewis@dundermifflin.com": 500
     },
     "movement": {
@@ -33,6 +33,36 @@
                 "date": "2022-10-29T11:31:50.154855",
                 "actor": "System",
                 "value": 500
+            },
+            {
+                "date": "2022-10-29T15:25:31.068041",
+                "actor": "fabio",
+                "value": 30
+            },
+            {
+                "date": "2022-10-29T15:25:38.773157",
+                "actor": "fabio",
+                "value": 30
+            },
+            {
+                "date": "2022-10-29T15:43:34.100280",
+                "actor": "fabio",
+                "value": -30
+            },
+            {
+                "date": "2022-10-29T15:43:40.985463",
+                "actor": "fabio",
+                "value": -20
+            },
+            {
+                "date": "2022-10-29T15:45:59.480492",
+                "actor": "fabio",
+                "value": 5
+            },
+            {
+                "date": "2022-10-29T15:47:50.714447",
+                "actor": "fabio",
+                "value": -20
             }
         ],
         "schurute@dundermifflin.com": [
@@ -40,6 +70,36 @@
                 "date": "2022-10-29T11:31:50.156353",
                 "actor": "System",
                 "value": 100
+            },
+            {
+                "date": "2022-10-29T15:25:31.068050",
+                "actor": "fabio",
+                "value": 30
+            },
+            {
+                "date": "2022-10-29T15:25:38.773166",
+                "actor": "fabio",
+                "value": 30
+            },
+            {
+                "date": "2022-10-29T15:43:34.100290",
+                "actor": "fabio",
+                "value": -30
+            },
+            {
+                "date": "2022-10-29T15:43:40.985472",
+                "actor": "fabio",
+                "value": -20
+            },
+            {
+                "date": "2022-10-29T15:45:59.480502",
+                "actor": "fabio",
+                "value": 5
+            },
+            {
+                "date": "2022-10-29T15:47:50.714457",
+                "actor": "fabio",
+                "value": -20
             }
         ],
         "glewis@dundermifflin.com": [
