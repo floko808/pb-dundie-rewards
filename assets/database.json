@@ -3,122 +3,86 @@
         "jim@dundermifflin.com": {
             "name": "Jim Halpert",
             "dept": "Sales",
-            "role": "Salesman",
-            "created": false,
-            "e-mail": "jim@dundermifflin.com"
+            "role": "Salesman"
         },
         "schurute@dundermifflin.com": {
             "name": "Dwight Schrute",
             "dept": "Sales",
-            "role": "Manager",
-            "created": false,
-            "e-mail": "schurute@dundermifflin.com"
+            "role": "Manager"
         },
         "glewis@dundermifflin.com": {
             "name": "Gabe Lewis",
             "dept": "Engineering",
-            "role": "Director",
-            "created": false,
-            "e-mail": "glewis@dundermifflin.com"
+            "role": "Director"
         }
     },
     "balance": {
-        "jim@dundermifflin.com": 495,
-        "schurute@dundermifflin.com": 95,
-        "glewis@dundermifflin.com": 500
+        "jim@dundermifflin.com": 330,
+        "schurute@dundermifflin.com": 130,
+        "glewis@dundermifflin.com": 540
     },
     "movement": {
         "jim@dundermifflin.com": [
             {
-                "date": "2022-10-29T11:31:50.154855",
+                "date": "2022-10-29T16:27:11.663193",
                 "actor": "System",
                 "value": 500
             },
             {
-                "date": "2022-10-29T15:25:31.068041",
+                "date": "2022-10-29T16:28:05.921447",
                 "actor": "fabio",
                 "value": 30
             },
             {
-                "date": "2022-10-29T15:25:38.773157",
+                "date": "2022-10-29T16:29:46.151942",
                 "actor": "fabio",
-                "value": 30
-            },
-            {
-                "date": "2022-10-29T15:43:34.100280",
-                "actor": "fabio",
-                "value": -30
-            },
-            {
-                "date": "2022-10-29T15:43:40.985463",
-                "actor": "fabio",
-                "value": -20
-            },
-            {
-                "date": "2022-10-29T15:45:59.480492",
-                "actor": "fabio",
-                "value": 5
-            },
-            {
-                "date": "2022-10-29T15:47:50.714447",
-                "actor": "fabio",
-                "value": -20
+                "value": -200
             }
         ],
         "schurute@dundermifflin.com": [
             {
-                "date": "2022-10-29T11:31:50.156353",
+                "date": "2022-10-29T16:27:11.665016",
                 "actor": "System",
                 "value": 100
             },
             {
-                "date": "2022-10-29T15:25:31.068050",
+                "date": "2022-10-29T16:28:05.921463",
                 "actor": "fabio",
                 "value": 30
-            },
-            {
-                "date": "2022-10-29T15:25:38.773166",
-                "actor": "fabio",
-                "value": 30
-            },
-            {
-                "date": "2022-10-29T15:43:34.100290",
-                "actor": "fabio",
-                "value": -30
-            },
-            {
-                "date": "2022-10-29T15:43:40.985472",
-                "actor": "fabio",
-                "value": -20
-            },
-            {
-                "date": "2022-10-29T15:45:59.480502",
-                "actor": "fabio",
-                "value": 5
-            },
-            {
-                "date": "2022-10-29T15:47:50.714457",
-                "actor": "fabio",
-                "value": -20
             }
         ],
         "glewis@dundermifflin.com": [
             {
-                "date": "2022-10-29T11:31:50.156831",
+                "date": "2022-10-29T16:27:11.665574",
                 "actor": "System",
                 "value": 500
+            },
+            {
+                "date": "2022-10-29T16:28:25.792758",
+                "actor": "fabio",
+                "value": 90
+            },
+            {
+                "date": "2022-10-29T16:28:40.445189",
+                "actor": "fabio",
+                "value": 50
+            },
+            {
+                "date": "2022-10-29T16:29:17.492619",
+                "actor": "fabio",
+                "value": -100
             }
         ]
     },
     "users": {
         "jim@dundermifflin.com": {
-            "password": "ojyQVaMS"
+            "password": "NsEX3neQ"
         },
         "schurute@dundermifflin.com": {
-            "password": "gpLXh4eW"
+            "password": "5DePbrHp"
         },
         "glewis@dundermifflin.com": {
-            "password": "2khR1u7w"
+            "password": "EGkAtbUg"
         }
     }
 }

@@ -20,9 +20,8 @@ fmt:
 
 test:
 	@.venv/bin/pytest -s --forked
-
 testci:
-	@pytest -v --junitxml=test-result.xml
+	@pytest -v --junitxml=test-result.xml -s --forked
 
 watch:
 	# @.venv/bin/ptw
@@ -43,5 +42,12 @@ clean:
 	@rm -rf .tox/
 	@rm -rf docs/_build
 
-	
+build:
+	@python3 setup.py sdist bdist_wheel
+
+publish-test:
+	@twine upload --repository testpypi dist/*
+
+publish:
+	twine upload  dist/*
 	

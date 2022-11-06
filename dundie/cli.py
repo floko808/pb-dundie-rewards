@@ -37,7 +37,7 @@ def load(filepath):
     ie: path/to_the_file/file.csv
     """
     table = Table(title="Dunder Mifflin Associates")
-    headers = ["Name", "Dept", "Role", "Created", "E-mail"]
+    headers = ["Name", "Dept", "Role", "Created", "Email"]
     for header in headers:
         table.add_column(header, style="green")
 
