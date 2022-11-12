@@ -1,30 +1,36 @@
 import pytest
 
-from dundie.core import read
-from dundie.database import add_person, commit, connect
+from dundie.core import load, read
+from dundie.database import get_session
+from dundie.models import Person
+from dundie.utils.db import add_person
+
+from .constants import PEOPLE_FILE
 
 
 @pytest.mark.unit
 def test_read_with_query():
-    db = connect()
-    pk = "joe@doe.com"
+    session = get_session()
+
     data = {
-        "name": "Joe Doe",
         "role": "Salesman",
         "dept": "Sales",
+        "name": "Joe Doe",
+        "email": "joe@doe.com",
     }
-    _, created = add_person(db, pk, data)
+    _, created = add_person(session, Person(**data))
     assert created is True
-    commit(db)
-    pk = "jim@doe.com"
+
     data = {
-        "name": "Jim Doe",
         "role": "Manager",
         "dept": "Management",
+        "name": "Jim Doe",
+        "email": "jim@doe.com",
     }
-    _, created = add_person(db, pk, data)
+    _, created = add_person(session, Person(**data))
     assert created is True
-    commit(db)
+
+    session.commit()
 
     response = read()
     assert len(response) == 2
@@ -36,3 +42,24 @@ def test_read_with_query():
     response = read(email="joe@doe.com")
     assert len(response) == 1
     assert response[0]["name"] == "Joe Doe"
+
+
+@pytest.mark.unit
+def test_read_all_data():
+    load(PEOPLE_FILE)
+    result = read()
+    assert len(result) == 3
+
+
+@pytest.mark.unit
+def test_read_only_one_dept():
+    load(PEOPLE_FILE)
+    result = read(dept="Sales")
+    assert len(result) == 2
+
+
+@pytest.mark.unit
+def test_read_only_one_person():
+    load(PEOPLE_FILE)
+    result = read(email="jim@dundlermifflin.com")
+    assert len(result) == 1

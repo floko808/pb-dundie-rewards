@@ -1,11 +1,19 @@
 import json
+import warnings
 
 import pkg_resources
 import rich_click as click
 from rich.console import Console
 from rich.table import Table
+from sqlalchemy.exc import SAWarning
+from sqlmodel.sql.expression import Select, SelectOfScalar
 
 from dundie import core
+
+SelectOfScalar.inherit_cache = True
+Select.inherit_cache = True
+
+warnings.filterwarnings("ignore", category=SAWarning)
 
 click.rich_click.USE_RICH_MARKUP = True
 click.rich_click.USE_MARKDOWN = True
@@ -37,7 +45,7 @@ def load(filepath):
     ie: path/to_the_file/file.csv
     """
     table = Table(title="Dunder Mifflin Associates")
-    headers = ["Name", "Dept", "Role", "Created", "Email"]
+    headers = ["email", "name", "dept", "role", "currency", "created"]
     for header in headers:
         table.add_column(header, style="green")
 
@@ -66,6 +74,8 @@ def show(output, **query):
         table.add_column(key.title(), style="magenta")
 
     for person in result:
+        person["value"] = f"{person['value']:.2f}"
+        person["balance"] = f"{person['balance']:.2f}"
         table.add_row(*[str(value) for value in person.values()])
     console = Console()
     console.print(table)

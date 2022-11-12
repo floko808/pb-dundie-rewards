@@ -10,7 +10,8 @@ testpaths = [
 exclude = [
     ".venv", 
     "build", 
-    ".vscodelocal"
+    ".vscodelocal",
+    "migrations"
     ]
 max-line-length=79
 

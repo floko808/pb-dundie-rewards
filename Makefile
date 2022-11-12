@@ -12,16 +12,15 @@ ipython:
 	@.venv/bin/ipython
 
 lint:
-	@.venv/bin/pflake8
-
+	@.venv/bin/pflake8 
+	
 fmt:
 	@.venv/bin/isort dundie tests integration
 	@.venv/bin/black dundie tests integration
 
 test:
 	@.venv/bin/pytest -s --forked
-testci:
-	@pytest -v --junitxml=test-result.xml -s --forked
+
 
 watch:
 	# @.venv/bin/ptw
